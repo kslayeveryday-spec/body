@@ -1,0 +1,44 @@
+/* Dashboard product images and uploaded Be Bodywise logo */
+body[data-page="index"] .logo {
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+  font-size: 0;
+}
+body[data-page="index"] .logo img,
+body[data-page="index"] .logo span,
+body[data-page="index"] .logo b {
+  display: none !important;
+}
+body[data-page="index"] .logo::before {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 48px;
+  background: url("logo.jpg") left center / contain no-repeat;
+}
+body[data-page="index"] .hero {
+  position: relative;
+  overflow: hidden;
+  padding-right: 40%;
+  min-height: 310px;
+}
+body[data-page="index"] .hero::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  bottom: 20px;
+  width: 36%;
+  border-radius: 18px;
+  background-color: #fff;
+  background-image: url("body-wash.jpg"), url("underarm-roll-on.jpg");
+  background-repeat: no-repeat;
+  background-size: 49% 100%, 49% 100%;
+  background-position: left center, right center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .14);
+}
+@media (max-width: 760px) {
+  body[data-page="index"] .hero { padding-right: 28px; }
+  body[data-page="index"] .hero::after { display: none; }
+}
